@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-class cpfValidate {
+class CpfValidate {
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     System.out.println("Digite o cpf:");
     String cpf = sc.next();
-    if (validate(cpf)) {
+        if (validate(cpf)) {
       System.out.println("Cpf Válido!");
     } else {
       System.out.println("Cpf Inválido!");
@@ -20,36 +20,35 @@ class cpfValidate {
         "Erro! Digite apenas números e os caractéres '.' e '-' "
       );
       return false;
-    } else if (cpf.length() != 14) {
-      if (validateNumbers.length() < 11) {
-        System.out.println("Erro! Falta(m) algum(s) número(s)");
-      } else if (validateNumbers.length() > 11) {
-        System.out.println("Erro! Tem mais que 11 números");
-      } else {
-        validateChars(cpf);
-      }
+    }else if (validateNumbers.length() != 11) {
+      System.out.println("Erro! esta(ão) faltando ou sobrando algum(s) número(s)");
+    }else if (!validateChars(cpf)) {      
       return false;
-    } else if (
+    }else if (
       !validateDigit(validateNumbers) || !validateSameNumbers(validateNumbers)
     ) {
       System.out.println("O cpf não existe!");
       return false;
-    } else {
-      return true;
     }
+
+      return true;
   }
 
-  public static void validateChars(String cpf) {
-    if (cpf.indexOf("-") == -1) {
+  public static boolean validateChars(String cpf) {
+    boolean returnBoolean = true;
+    if (cpf.substring(11,12).indexOf("-") == -1) {
       System.out.println("Erro! Falta o '-'");
+      returnBoolean = false; 
     }
-    if (cpf.indexOf(".") == -1) {
-      System.out.println("Erro! Faltam os '.'");
-    } else if (cpf.indexOf(".", 3) == -1) {
-      System.out.println("Erro! Falta o '.'");
-    } else if (cpf.indexOf(".", 7) == -1) {
-      System.out.println("Erro! Falta o '.'");
+    if (cpf.substring(3,4).indexOf(".") == -1) {
+      System.out.println("Erro! Falta o primeiro '.' ");
+      returnBoolean = false;
     }
+    if (cpf.substring(7,8).indexOf(".") == -1) {
+      System.out.println("Erro! Falta o segundo '.'");
+      returnBoolean = false;
+    }
+    return returnBoolean;
   }
 
   public static boolean validateDigit(String cpf) {
