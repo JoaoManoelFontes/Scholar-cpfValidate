@@ -23,6 +23,15 @@
     </li>
     <hr/>
     <li>
-    <h3></h3>
+    <h3>validateDitig</h3>
+    <p>Confere se os digitos verificadores (últimos digitos) batem com o cálculo de validação de cpf: <br/>
+    Pega os 9 primeiros números do cpf e multiplica cada algarismo em uma sequência de 1 a 9 e soma todos os resultados. Logo após divide essa soma por 11, o resto da divisão é o primeiro digito (se o resultado for 10, usa-se o 0).<br/>
+    Para encontrar o segundo digito, pega os 9 números e adciona o primeiro digito na ultima posição e faz a mesma multiplicação, agora começando do 0 ao 9. O resto da divisão por 11 é o segundo digito.
+    </p>
+    </li>
+    <hr/>
+    <li>
+    <h3>validateSameNumbers</h3>
+    <p>Serve para verificar se os números que o usuário inseriu são todos iguais, tornando assim o cpf inválido, porém o cálculo dos digitos verificadores dá esse cpf como válido, então precisa ser verificado a parte.</p>
     </li>
 </ul>
