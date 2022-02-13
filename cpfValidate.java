@@ -11,6 +11,8 @@ class cpfValidate {
     } else {
       System.out.println("Cpf Inválido!");
     }
+
+    sc.close();
   }
 
   public static boolean validate(String cpf) {
