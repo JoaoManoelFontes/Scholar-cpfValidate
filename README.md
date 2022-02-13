@@ -34,4 +34,9 @@
     <h3>validateSameNumbers</h3>
     <p>Serve para verificar se os números que o usuário inseriu são todos iguais, tornando assim o cpf inválido, porém o cálculo dos digitos verificadores dá esse cpf como válido, então precisa ser verificado a parte.</p>
     </li>
+    <hr/>
+    <li>
+    <h3>isDouble</h3>
+    <p>Método que mostra se a String cpf pode ser passada para double com o método <i>parseDouble()</i>, ou seja, vai retornar false se não poder passar essa String para double.</p>
+    </li>
 </ul>
